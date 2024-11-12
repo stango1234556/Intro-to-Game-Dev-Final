@@ -213,14 +213,14 @@ switch(global.state) {
 				cpu_ace_count++;	
 			}
 		}
-		else if(cpu_total >= 17 && cpu_total < 21){
+		else if(cpu_total >= player_total && cpu_total < 21){
 			move_timer_2++;
 			if(move_timer_2 >= 45){
 				move_timer_2 = 0;
 				global.state = STATES.RESOLVE;
 			}
 		}
-		else if(cpu_total == 21){
+		else if(cpu_total >= 17 && cpu_total <= 21){
 			move_timer_2++;
 			if(move_timer_2 >= 45){
 				move_timer_2 = 0;
