@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_hit.wav",
-  "duration": 0.425292,
+  "duration": 0.119927,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
