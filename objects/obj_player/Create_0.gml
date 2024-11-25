@@ -1,5 +1,25 @@
+// Define States
+enum PlayerState {
+    GROUND,
+    IN_AIR,
+	IN_AIR_SLOWING,
+    HIT,
+    JUMPING
+}
+
+enum Facing {
+	LEFT,
+	RIGHT
+}
+
+
 image_index = 0;
 image_speed = 0;
+
+dir = 0;
+
+to_move_x = 0;
+to_move_y = 0;
 
 x_vel = 0;
 y_vel= 0;
