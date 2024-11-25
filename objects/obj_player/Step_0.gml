@@ -1,3 +1,20 @@
+//Slowing player down on x-axis
+if(launched_right && !hit){
+	x_vel -= 0.4; 
+	if(x_vel <= 0){
+		launched_right = false;	
+	}
+}
+else if(launched_left && !hit){
+	x_vel += 0.4; 
+	if(x_vel >= 0){
+		launched_left = false;	
+	}
+}
+else{
+	x_vel *= 0.9;
+}
+
 //Gravity for y-axis
 y_vel += grav;
 
@@ -6,15 +23,15 @@ r_x += x_vel;
 r_y += y_vel;
 
 //Round velocity to find pixels moving this frame
-to_move_x = round(r_x);
-to_move_y = round(r_y);
+var to_move_x = round(r_x);
+var to_move_y = round(r_y);
 
 //Remove rounded amount	to find leftover speed
 r_x -= to_move_x;
 r_y -= to_move_y;
 
 //Find direction currently moving
-dir = sign(to_move_y);
+var dir = sign(to_move_y);
 
 //Move however much we need to move this frame
 x += to_move_x;
@@ -87,29 +104,24 @@ while(to_move_y != 0){
 	}
 }	
 
-switch(PlayerState){
-	case PlayerState.GROUND:
-	case PlayerState.IN_AIR:
-	case PlayerState.HIT:
-
-		break
-	case PlayerState.JUMPING:	
+//Check if player is hit
+if(hit && launched_left){
+	r_x = 0;
+	x_vel = -1 * abs(launch_vel_x * percentage);
+	y = y + dir;
+	y_vel = launch_vel_y * percentage;
+	r_y = 0;
+	percentage += irandom_range(10, 25) / 100;
+	hit = false;
 }
-//Slowing player down on x-axis
-if(launched_right && !hit){
-	x_vel -= 0.4; 
-	if(x_vel <= 0){
-		launched_right = false;	
-	}
-}
-else if(launched_left && !hit){
-	x_vel += 0.4; 
-	if(x_vel >= 0){
-		launched_left = false;	
-	}
-}
-else{
-	x_vel *= 0.9;
+else if(hit && launched_right){
+	r_x = 0;
+	x_vel = launch_vel_x * percentage;
+	y = y + dir;
+	y_vel = launch_vel_y * percentage;
+	r_y = 0;
+	percentage += irandom_range(10, 25) / 100;
+	hit = false;
 }
 
 if(dir > 0){
