@@ -14,6 +14,7 @@ camera_set_view_pos(view_camera[0],
 if(shake_screen <= 0) {
 	//reset the counter
 	shake_screen = 10;
+	camera_set_view_pos(view_camera[0], 0, 0);
 } else {
 	//reset the alarm
 	alarm[0] = shake_screen;

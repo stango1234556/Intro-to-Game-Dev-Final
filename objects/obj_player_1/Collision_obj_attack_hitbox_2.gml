@@ -3,6 +3,7 @@ if(!obj_player_2.facing_right){
 	if(!audio_is_playing(snd_hit)){
 		audio_play_sound(snd_hit, 1, false);
 	}
+	obj_partical_manager.particle_4 = true;
 	hit = true;
 }
 else{
@@ -10,5 +11,6 @@ else{
 	if(!audio_is_playing(snd_hit)){
 		audio_play_sound(snd_hit, 1, false);
 	}
+	obj_partical_manager.particle_4 = true;
 	launched_right = true;
 }
