@@ -61,6 +61,7 @@
     {"id":{"name":"obj_player_manager","path":"objects/obj_player_manager/obj_player_manager.yy",},"order":9,},
     {"id":{"name":"obj_large_cloud","path":"objects/obj_large_cloud/obj_large_cloud.yy",},"order":0,},
     {"id":{"name":"snd_hit","path":"sounds/snd_hit/snd_hit.yy",},"order":8,},
+    {"id":{"name":"obj_play_again","path":"objects/obj_play_again/obj_play_again.yy",},"order":21,},
     {"id":{"name":"snd_jump","path":"sounds/snd_jump/snd_jump.yy",},"order":6,},
     {"id":{"name":"spr_player_1_attack_right","path":"sprites/spr_player_1_attack_right/spr_player_1_attack_right.yy",},"order":1,},
     {"id":{"name":"spr_player_1_menu","path":"sprites/spr_player_1_menu/spr_player_1_menu.yy",},"order":9,},
