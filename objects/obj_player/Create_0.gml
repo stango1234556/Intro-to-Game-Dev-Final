@@ -30,3 +30,9 @@ percentage = 1;
 hit = false;
 
 cloud_bounce = false;
+
+respawned = true;
+
+sin_wave = 0;
+
+direction_going = 0;

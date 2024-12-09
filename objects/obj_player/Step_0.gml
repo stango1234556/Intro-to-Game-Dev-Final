@@ -32,6 +32,7 @@ r_y -= to_move_y;
 
 //Find direction currently moving
 var dir = sign(to_move_y);
+direction_going = dir;
 
 //Move however much we need to move this frame
 x += to_move_x;
@@ -124,23 +125,6 @@ else if(hit && launched_right){
 	hit = false;
 }
 
-if(dir > 0){
-	if(image_index >= 4){
-		image_speed = 0;
-	}
-	else{
-		image_speed = 1;
-	}
-}
-else if(dir < 0){
-	if(image_index >= 2){
-		image_speed = 0;
-	}
-	else{
-		image_speed = 1;
-	}
-}
-
 if(!jumped && keyboard_check_pressed(ord(jump_button))){
 	sprite_index = jump_sprite_right;
 	image_index = 0;
@@ -161,6 +145,5 @@ else if(in_air && jumped && !double_jumped && keyboard_check_pressed(ord(jump_bu
 	r_y = 0;
 }
 
-
-
+sin_wave = 0 + (1 + sin(2 * pi * current_time/1000 * 0.30)) * 0.8
 

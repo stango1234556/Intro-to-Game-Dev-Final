@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_menu_player_2",
   "spriteId": {
-    "name": "spr_player_2_left",
-    "path": "sprites/spr_player_2_left/spr_player_2_left.yy",
+    "name": "spr_player_2_menu",
+    "path": "sprites/spr_player_2_menu/spr_player_2_menu.yy",
   },
   "solid": false,
   "visible": true,

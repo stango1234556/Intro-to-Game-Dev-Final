@@ -1,3 +1,8 @@
+//Stop glow effect
+if(keyboard_check_pressed(vk_anykey)){
+	respawned = false;	
+}
+
 //Sprite direction
 if(!launched_left && !launched_right){
 	if(keyboard_check(ord("A"))){
@@ -36,14 +41,6 @@ if(!launched_left && !launched_right){
 
 //Attacking
 if(!attacked && keyboard_check_pressed(ord("V"))){
-	//if(facing_right){
-	//	instance_create_layer(x + sprite_width / 2, y, "Attacks", obj_attack_hitbox_1);
-	//	attacked = true;
-	//}
-	//else{
-	//	instance_create_layer(x - spr_attack_hitbox.sprite_width * 3 / 4 - sprite_width / 2, y, "Attacks", obj_attack_hitbox_1);
-	//	attacked = true;
-	//}
 	sprite_index = spr_player_1_attack_right;
 	image_speed = 1;
 	if(facing_right){
@@ -70,6 +67,23 @@ if(attacked){
 if(!in_air && !attacked && !walking){
 	sprite_index = spr_player_1_right;	
 	image_speed = 0;
+}
+
+if(direction_going > 0){
+	if(image_index >= 4 && sprite_index != spr_player_1_attack_right){
+		image_speed = 0;
+	}
+	else{
+		image_speed = 1;
+	}
+}
+else if(direction_going < 0){
+	if(image_index >= 2 && sprite_index != spr_player_1_attack_right){
+		image_speed = 0;
+	}
+	else{
+		image_speed = 1;
+	}
 }
 
 // Inherit the parent event
