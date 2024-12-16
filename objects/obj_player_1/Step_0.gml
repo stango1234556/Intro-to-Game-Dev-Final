@@ -1,5 +1,5 @@
 //Stop glow effect
-if(keyboard_check_pressed(ord("A")) || keyboard_check_pressed(ord("D")) || keyboard_check_pressed(ord("W")) || keyboard_check_pressed(ord("V"))){
+if(keyboard_check(ord("A")) || keyboard_check(ord("D")) || keyboard_check(ord("W")) || keyboard_check(ord("V"))){
 	respawned = false;
 }
 
