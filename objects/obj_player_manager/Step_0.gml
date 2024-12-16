@@ -1,3 +1,10 @@
+if(audio_is_playing(snd_menu)){
+	audio_stop_sound(snd_menu);
+}
+if(!audio_is_playing(snd_fight)){
+	audio_play_sound(snd_fight, 1, true, 0.05);
+}
+
 if(player_1_respawn){
 	spawn_timer_1++;
 	if(spawn_timer_1 >= spawn_timer_goal){

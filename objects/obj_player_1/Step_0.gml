@@ -1,6 +1,6 @@
 //Stop glow effect
-if(keyboard_check_pressed(vk_anykey)){
-	respawned = false;	
+if(keyboard_check_pressed(ord("A")) || keyboard_check_pressed(ord("D")) || keyboard_check_pressed(ord("W")) || keyboard_check_pressed(ord("V"))){
+	respawned = false;
 }
 
 //Sprite direction
@@ -42,6 +42,7 @@ if(!launched_left && !launched_right){
 //Attacking
 if(!attacked && keyboard_check_pressed(ord("V"))){
 	sprite_index = spr_player_1_attack_right;
+	image_index = 0;
 	image_speed = 1;
 	if(facing_right){
 		audio_play_sound(snd_attack, 1, false, 0.25);
@@ -56,11 +57,15 @@ if(!attacked && keyboard_check_pressed(ord("V"))){
 
 //Get rid of hitbox
 if(attacked){
-	if(image_index >= 4){
+	if(image_index >= 3){
 		sprite_index = spr_player_1_right;
 		image_speed = 0;
-		attacked = false
 		instance_destroy(obj_attack_hitbox_1);
+	}
+	attack_timer += 1;
+	if(attack_timer >= attack_cooldown){
+		attacked = false;	
+		attack_timer = 0;
 	}
 }
 

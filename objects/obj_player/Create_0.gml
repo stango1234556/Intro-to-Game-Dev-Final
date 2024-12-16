@@ -36,3 +36,6 @@ respawned = true;
 sin_wave = 0;
 
 direction_going = 0;
+
+attack_timer = 0;
+attack_cooldown = 30;

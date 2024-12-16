@@ -85,7 +85,7 @@ while(to_move_y != 0){
 		y = y + dir;
 		y_vel = bounce_vel;
 		r_y = 0;
-		audio_play_sound(snd_walking_5, 1, false, 2);
+		audio_play_sound(snd_jump, 1, false, 2);
 		//Reset jumps
 		jumped = false;
 		double_jumped = false;
@@ -125,20 +125,20 @@ else if(hit && launched_right){
 	hit = false;
 }
 
-if(!jumped && keyboard_check_pressed(ord(jump_button))){
+if(!jumped && keyboard_check_pressed(jump_button)){
 	sprite_index = jump_sprite_right;
 	image_index = 0;
-	audio_play_sound(snd_walking_5, 1, false, 2);
+	audio_play_sound(snd_jump, 1, false, 2);
 	in_air = true;
 	y = y + dir;
 	y_vel = bounce_vel;
 	jumped = true;
 	r_y = 0;
 }
-else if(in_air && jumped && !double_jumped && keyboard_check_pressed(ord(jump_button))){
+else if(in_air && jumped && !double_jumped && keyboard_check_pressed(jump_button)){
 	sprite_index = jump_sprite_right;
 	image_index = 0;
-	audio_play_sound(snd_walking_5, 1, false, 2);
+	audio_play_sound(snd_jump, 1, false, 2);
 	double_jumped = true;
 	y = y + dir;
 	y_vel = bounce_vel;
